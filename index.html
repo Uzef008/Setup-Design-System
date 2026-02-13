@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KodNest Premium Build System</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <!-- Top Bar -->
+      <header class="top-bar">
+        <div class="top-bar__content">
+          <div class="top-bar__left">
+            <span class="top-bar__project-name">KodNest Premium Build System</span>
+          </div>
+          <div class="top-bar__center">
+            <span class="top-bar__progress">Step 1 of 4</span>
+          </div>
+          <div class="top-bar__right">
+            <span class="badge badge--status badge--status-in-progress">In Progress</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <!-- Context Header -->
+        <section class="context-header">
+          <h1 class="context-header__title">Define your build intent</h1>
+          <p class="context-header__subtitle">
+            Clarify what you want KodNest to assemble before you begin.
+          </p>
+        </section>
+
+        <!-- Primary Workspace + Secondary Panel -->
+        <section class="workspace">
+          <div class="workspace__content">
+            <!-- Primary Workspace (70%) -->
+            <section class="workspace__primary">
+              <div class="card">
+                <div class="card__header">
+                  <h2 class="card__title">Configuration overview</h2>
+                  <span class="badge">Draft</span>
+                </div>
+                <p class="card__body-text">
+                  Use this workspace to outline the structure and expectations of your build. Each
+                  decision here should be calm, intentional, and easy to revisit.
+                </p>
+
+                <div class="form-grid">
+                  <div class="form-field">
+                    <label for="project-name" class="field-label">Project name</label>
+                    <input
+                      id="project-name"
+                      type="text"
+                      class="input"
+                      placeholder="e.g. Marketing landing build"
+                    />
+                    <p class="field-helper">
+                      A concise name that clearly reflects what this build will produce.
+                    </p>
+                  </div>
+
+                  <div class="form-field">
+                    <label for="primary-goal" class="field-label">Primary outcome</label>
+                    <textarea
+                      id="primary-goal"
+                      class="input input--textarea"
+                      placeholder="Describe the single most important outcome of this build."
+                    ></textarea>
+                    <p class="field-helper">
+                      Keep this focused. The more specific the outcome, the more predictable the
+                      build.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <h2 class="card__title">Constraints and guardrails</h2>
+                <p class="card__body-text">
+                  Capture the limits within which this build must operate. These constraints keep
+                  the result coherent and aligned with your standards.
+                </p>
+
+                <div class="form-grid">
+                  <div class="form-field">
+                    <label for="tech-constraints" class="field-label">Technical constraints</label>
+                    <textarea
+                      id="tech-constraints"
+                      class="input input--textarea"
+                      placeholder="Document any required stacks, dependencies, or integrations."
+                    ></textarea>
+                  </div>
+
+                  <div class="form-field">
+                    <label for="non-functional" class="field-label">Non-functional expectations</label>
+                    <textarea
+                      id="non-functional"
+                      class="input input--textarea"
+                      placeholder="Performance, security, accessibility, and other quality expectations."
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Secondary Panel (30%) -->
+            <aside class="workspace__secondary">
+              <section class="panel-section">
+                <h3 class="panel-section__title">This step</h3>
+                <p class="panel-section__body">
+                  You are defining the intent and boundaries of this build. Stay factual and clear;
+                  avoid implementation details for now.
+                </p>
+              </section>
+
+              <section class="panel-section">
+                <h3 class="panel-section__title">Prompt for builder</h3>
+                <div class="prompt-box">
+                  <pre class="prompt-box__content" id="builder-prompt">
+You are a careful system. Use the configuration on the left as the single source of truth. Ask for clarification before making assumptions.</pre
+                  >
+                  <div class="prompt-box__footer">
+                    <button class="button button--secondary" data-action="copy-prompt">
+                      Copy
+                    </button>
+                  </div>
+                </div>
+              </section>
+
+              <section class="panel-section">
+                <h3 class="panel-section__title">Run this step</h3>
+                <div class="panel-buttons">
+                  <button class="button button--primary">Build in Lovable</button>
+                  <button class="button button--secondary">Copy</button>
+                  <button class="button button--secondary">It Worked</button>
+                  <button class="button button--secondary button--neutral">Error</button>
+                  <button class="button button--secondary">Add Screenshot</button>
+                </div>
+              </section>
+            </aside>
+          </div>
+        </section>
+      </main>
+
+      <!-- Proof Footer -->
+      <footer class="proof-footer">
+        <div class="proof-footer__content">
+          <div class="proof-item" data-proof-item>
+            <label class="proof-item__header">
+              <input type="checkbox" class="checkbox" data-proof-checkbox />
+              <span class="proof-item__label">UI Built</span>
+            </label>
+            <input
+              type="text"
+              class="input input--compact"
+              placeholder="How did you verify the UI?"
+              data-proof-input
+            />
+          </div>
+
+          <div class="proof-item" data-proof-item>
+            <label class="proof-item__header">
+              <input type="checkbox" class="checkbox" data-proof-checkbox />
+              <span class="proof-item__label">Logic Working</span>
+            </label>
+            <input
+              type="text"
+              class="input input--compact"
+              placeholder="How did you validate the logic?"
+              data-proof-input
+            />
+          </div>
+
+          <div class="proof-item" data-proof-item>
+            <label class="proof-item__header">
+              <input type="checkbox" class="checkbox" data-proof-checkbox />
+              <span class="proof-item__label">Test Passed</span>
+            </label>
+            <input
+              type="text"
+              class="input input--compact"
+              placeholder="Which tests passed?"
+              data-proof-input
+            />
+          </div>
+
+          <div class="proof-item" data-proof-item>
+            <label class="proof-item__header">
+              <input type="checkbox" class="checkbox" data-proof-checkbox />
+              <span class="proof-item__label">Deployed</span>
+            </label>
+            <input
+              type="text"
+              class="input input--compact"
+              placeholder="Where is this deployed?"
+              data-proof-input
+            />
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+  </html>
+

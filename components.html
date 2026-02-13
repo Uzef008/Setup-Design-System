@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KodNest Premium Build System – Components</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <!-- Top Bar -->
+      <header class="top-bar">
+        <div class="top-bar__content">
+          <div class="top-bar__left">
+            <span class="top-bar__project-name">KodNest Premium Build System</span>
+          </div>
+          <div class="top-bar__center">
+            <span class="top-bar__progress">Components Library</span>
+          </div>
+          <div class="top-bar__right">
+            <span class="badge badge--status badge--status-in-progress">In Progress</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <!-- Context Header -->
+        <section class="context-header">
+          <h1 class="context-header__title">System components</h1>
+          <p class="context-header__subtitle">
+            Reference implementation of buttons, inputs, cards, badges, and the proof footer using a
+            single design language.
+          </p>
+        </section>
+
+        <!-- Primary Workspace + Secondary Panel -->
+        <section class="workspace">
+          <div class="workspace__content">
+            <!-- Primary Workspace (70%) -->
+            <section class="workspace__primary">
+              <div class="card">
+                <div class="card__header">
+                  <h2 class="card__title">Buttons</h2>
+                  <span class="badge">Atoms</span>
+                </div>
+                <p class="card__body-text">
+                  Primary and secondary actions share consistent radius, spacing, and motion. Color
+                  is reserved for intent, not decoration.
+                </p>
+                <div class="panel-buttons">
+                  <button class="button button--primary">Primary action</button>
+                  <button class="button button--secondary">Secondary action</button>
+                  <button class="button button--secondary button--neutral">Neutral action</button>
+                  <button class="button button--secondary" disabled>Disabled</button>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card__header">
+                  <h2 class="card__title">Inputs</h2>
+                  <span class="badge">Atoms</span>
+                </div>
+                <p class="card__body-text">
+                  Inputs are clean, with clear focus states and minimal decoration. Error and success
+                  states rely on borders and copy, not harsh fills.
+                </p>
+                <div class="form-grid">
+                  <div class="form-field">
+                    <label class="field-label" for="sample-input">Standard text field</label>
+                    <input
+                      id="sample-input"
+                      class="input"
+                      type="text"
+                      placeholder="Placeholder copy"
+                    />
+                  </div>
+
+                  <div class="form-field">
+                    <label class="field-label" for="sample-textarea">Text area</label>
+                    <textarea
+                      id="sample-textarea"
+                      class="input input--textarea"
+                      placeholder="Longer freeform description."
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card__header">
+                  <h2 class="card__title">Cards and badges</h2>
+                  <span class="badge">Molecules</span>
+                </div>
+                <p class="card__body-text">
+                  Cards use borders and whitespace to create hierarchy. Badges are reserved for
+                  status and meta information.
+                </p>
+                <div class="form-grid">
+                  <div class="card">
+                    <div class="card__header">
+                      <h3 class="panel-section__title">Nested card</h3>
+                      <span class="badge">Meta</span>
+                    </div>
+                    <p class="card__body-text">
+                      Example of a card within a card, maintaining the same visual language without
+                      introducing shadows or new colors.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Secondary Panel (30%) -->
+            <aside class="workspace__secondary">
+              <section class="panel-section">
+                <h3 class="panel-section__title">This step</h3>
+                <p class="panel-section__body">
+                  Use this page as a reference when creating new views. Each new surface should feel
+                  like a variation of these components, not a new system.
+                </p>
+              </section>
+
+              <section class="panel-section">
+                <h3 class="panel-section__title">Prompt for builder</h3>
+                <div class="prompt-box">
+                  <pre class="prompt-box__content" id="builder-prompt">
+When you generate new UIs, only use these components and tokens. Do not invent new colors, radii, or spacing values.</pre
+                  >
+                  <div class="prompt-box__footer">
+                    <button class="button button--secondary" data-action="copy-prompt">
+                      Copy
+                    </button>
+                  </div>
+                </div>
+              </section>
+
+              <section class="panel-section">
+                <h3 class="panel-section__title">Run this step</h3>
+                <div class="panel-buttons">
+                  <button class="button button--primary">Build in Lovable</button>
+                  <button class="button button--secondary">Copy</button>
+                  <button class="button button--secondary">It Worked</button>
+                  <button class="button button--secondary button--neutral">Error</button>
+                  <button class="button button--secondary">Add Screenshot</button>
+                </div>
+              </section>
+            </aside>
+          </div>
+        </section>
+      </main>
+
+      <!-- Proof Footer -->
+      <footer class="proof-footer">
+        <div class="proof-footer__content">
+          <div class="proof-item" data-proof-item>
+            <label class="proof-item__header">
+              <input type="checkbox" class="checkbox" data-proof-checkbox />
+              <span class="proof-item__label">UI Built</span>
+            </label>
+            <input
+              type="text"
+              class="input input--compact"
+              placeholder="How did you verify the UI?"
+              data-proof-input
+            />
+          </div>
+
+          <div class="proof-item" data-proof-item>
+            <label class="proof-item__header">
+              <input type="checkbox" class="checkbox" data-proof-checkbox />
+              <span class="proof-item__label">Logic Working</span>
+            </label>
+            <input
+              type="text"
+              class="input input--compact"
+              placeholder="How did you validate the logic?"
+              data-proof-input
+            />
+          </div>
+
+          <div class="proof-item" data-proof-item>
+            <label class="proof-item__header">
+              <input type="checkbox" class="checkbox" data-proof-checkbox />
+              <span class="proof-item__label">Test Passed</span>
+            </label>
+            <input
+              type="text"
+              class="input input--compact"
+              placeholder="Which tests passed?"
+              data-proof-input
+            />
+          </div>
+
+          <div class="proof-item" data-proof-item>
+            <label class="proof-item__header">
+              <input type="checkbox" class="checkbox" data-proof-checkbox />
+              <span class="proof-item__label">Deployed</span>
+            </label>
+            <input
+              type="text"
+              class="input input--compact"
+              placeholder="Where is this deployed?"
+              data-proof-input
+            />
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+  </html>
+

@@ -1,0 +1,13 @@
+{
+  "name": "kodnest-premium-build-system",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "npx serve .",
+    "build": "echo \"Static build - no bundler required\""
+  },
+  "description": "Static front-end shell for the KodNest Premium Build System design system.",
+  "author": "",
+  "license": "MIT"
+}
+
